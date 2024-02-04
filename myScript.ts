@@ -162,6 +162,16 @@
 
 //* Generics -----------------------------------------------------------------------------------------------------
 
+    //? Generic Function can take in any string, number, or boolean 
+    const getFirstElement = <T>(myArray: T[]): T => {   //! T = GenericType can do more than one generic type <T, T2>
+        return myArray[0]
+    }
+
+    const boolArray = [ true, false ]
+    const numArray = [ 1, 2, 3, 4 ]
+
+    const firstBool = getFirstElement<boolean>(boolArray)
+    const firstNum = getFirstElement<number>(numArray)
 
 
 //* Typescript Documentation -------------------------------------------------------------------------------------
