@@ -17,10 +17,13 @@ TypeScript
         - tsc nameOfFile.ts
 
     Add to scripts in json package
-        "build": "tsc myScript.ts"
+        "build": "tsc"
 
         then 
         - npm run build
+
+    Set up a TypeScript (ts) Config file
+        - tsc --init
     
 
     
