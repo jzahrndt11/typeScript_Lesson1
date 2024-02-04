@@ -4,7 +4,6 @@
     ?  string
     ?  number
 */ 
-
     const myString: string = 'Hello World'
     const myNum: number = 5
     const isBool: boolean = true
@@ -19,7 +18,6 @@
     }
 
     console.log(add(1, 2))
-
 
 
 //* Array Types --------------------------------------------------------------------------------------------------
@@ -54,8 +52,115 @@
     const myDepartment: Department = 'English' // can now only be one of the 3 strings
 
 
+//* Object Type and Interfaces ------------------------------------------------------------------------------------
+    
+    //~ Object Type
+
+        type Class = {
+            name: string
+            code: string
+            semester: 'Spring' | 'Summer' | 'Fall'
+        }    
+
+        type Faculty = {
+            firstName: string
+            lastName: string
+            Department: Department
+            isAdjunct?: boolean //!   ?: to make any property optional we need a question mark
+            yearsEmployed: number
+        }
+
+        //? To add a new property create a new type and link old type and add property
+        type FacultyWithClasses = Faculty & {
+            classes: Class[]
+        }
+
+        const teacher: FacultyWithClasses = {
+            firstName: 'Mike',
+            lastName: 'Weinberg',
+            Department: 'Comp Sci',
+            //isAdjunct: true,
+            yearsEmployed: 4,
+            classes: [ 
+                {
+                    name: 'Avanced Web',
+                    code: '4011',
+                    semester: 'Spring'
+                }
+             ]
+        }
+
+    //~ Interfaces
+
+        interface Class1 {
+            name: string
+            code: string
+            semester: 'Spring' | 'Summer' | 'Fall'
+        }
+
+        interface Faculty1 {
+            firstName: string
+            lastName: string
+            Department: Department
+            isAdjunct?: boolean //!   ?: to make any property optional we need a question mark
+            yearsEmployed: number
+        }
+
+        interface FacultyWithClasses1 extends Faculty {
+            classes: Class[]
+        }
 
 
+//* Enums -------------------------------------------------------------------------------------------------------
+
+    enum Semester {
+        Spring = 'Spring',
+        Summer = ' Summer',
+        Fall = 'Fall',
+    }
+
+    type Class2 = {
+        name: string
+        code: string
+        semester: Semester // enum Here
+    }    
+
+    type Faculty2 = {
+        firstName: string
+        lastName: string
+        Department: Department
+        isAdjunct?: boolean //!   ?: to make any property optional we need a question mark
+        yearsEmployed: number
+    }
+
+    type FacultyWithClasses2 = Faculty & {
+        classes: Class2[]
+    }
+
+    const teacher2: FacultyWithClasses2 = {
+        firstName: 'Mike',
+        lastName: 'Weinberg',
+        Department: 'Comp Sci',
+        //isAdjunct: true,
+        yearsEmployed: 4,
+        classes: [ 
+            {
+                name: 'Avanced Web',
+                code: '4011',
+                semester: Semester.Spring
+            }
+         ]
+    }
+
+    //? Useful for Logging
+    enum LogLevel {
+        INFO,
+        WARNING,
+        ERROR
+    }
+
+
+//* Generics -----------------------------------------------------------------------------------------------------
 
 
 
