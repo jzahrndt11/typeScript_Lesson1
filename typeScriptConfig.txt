@@ -1,0 +1,26 @@
+TypeScript
+
+    - mkdir directoryName
+    - cd directoryName
+    - npm init -y   //create package json
+
+    Install TypeScript
+        - npm i typescript --global
+
+    Check Version
+        - tsc -v
+
+    Start coding
+        - code .
+
+    Compile to JavaScript - creates an empty file
+        - tsc nameOfFile.ts
+
+    Add to scripts in json package
+        "build": "tsc myScript.ts"
+
+        then 
+        - npm run build
+    
+
+    
