@@ -1,13 +1,17 @@
-//! Primitive Types--------------------------------------------------------------------------------------------
+//* Primitive Types----------------------------------------------------------------------------------------------
 /*  
-    *  boolean
-    *  string
-    *  number
+    ?  boolean
+    ?  string
+    ?  number
 */ 
 
     const myString: string = 'Hello World'
     const myNum: number = 5
     const isBool: boolean = true
+
+    const isAny: string | number | boolean = true
+    const isNumOrString: string | number = 0
+    const isNumOrBool: number | boolean = false
 
     //~ Set both parameters and return type to number
     const add = (num1: number, num2: number): number => {
@@ -18,12 +22,44 @@
 
 
 
+//* Array Types --------------------------------------------------------------------------------------------------
+
+    const addMulti = (numbers: number[]): number => {
+        return numbers.reduce((acc, x) => acc + x, 0)
+    }
+
+
+    //~ Multi-Dimension Arrays
+
+        const multiDimArray: number[][] = [
+            [ 1, 2, 3 ],
+            [ 1, 2, 3 ]
+        ]
+
+    const myArray: (string | number | boolean)[] = [ 1, 'M', 5, true ]
+
+
+//* Type Aliases -------------------------------------------------------------------------------------------------
+    /*
+        ? When declaring type aliases it is best practice to Capitalize the type to distinguish it from regular variables
+    */
+    
+    type FirstName = string
+    type FirstNameBool = string | boolean
+
+    const myFirstName: FirstName = 'Jeremy'
+
+    type Department = 'Comp Sci' | 'Math' | 'English'
+
+    const myDepartment: Department = 'English' // can now only be one of the 3 strings
 
 
 
 
 
-//* Typescript Documentation
+
+
+//* Typescript Documentation -------------------------------------------------------------------------------------
 
     /*
         ~Every Day Types (90% of whats covered): 
